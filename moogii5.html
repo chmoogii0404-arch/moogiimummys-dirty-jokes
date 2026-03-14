@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Munkh's Dirty Joke Nuke – 🔥 NSFW Edition</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #4b0000, #8b0000);
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 4.2rem;
+      margin: 0 0 20px;
+      text-shadow: 0 0 25px #ff3366;
+    }
+    #joke {
+      font-size: 2rem;
+      max-width: 85%;
+      min-height: 140px;
+      margin: 30px 0;
+      padding: 25px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 40px rgba(255,51,102,0.4);
+    }
+    button {
+      font-size: 1.8rem;
+      padding: 20px 70px;
+      border: none;
+      border-radius: 999px;
+      background: #ff3366;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 12px 35px rgba(255,51,102,0.6);
+    }
+    button:hover {
+      transform: scale(1.08);
+      background: #ff1a8c;
+    }
+    .emoji-rain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .emoji {
+      position: absolute;
+      font-size: 3.5rem;
+      user-select: none;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      to { transform: translateY(130vh) rotate(1440deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emoji-rain" id="rain"></div>
+
+  <h1>Dirty Joke Nuke 😈</h1>
+  <div id="joke">Click if you're brave enough... (or horny enough)</div>
+  <button onclick="tellJoke()">Give Me Something Filthy</button>
+
+  <script>
+    const jokes = [
+      "What's the difference between a G-spot and a golf ball? A guy will actually search for a golf ball.",
+      "Why isn't there a pregnant Barbie doll? Ken came in another box.",
+      "How did Burger King get Dairy Queen pregnant? He forgot to wrap his Whopper.",
+      "What did Cinderella say to Prince Charming? 'Want to see if it fits?'",
+      "Why do tofu and a dildo have in common? They're both meat substitutes.",
+      "What's worse than waking up at a party and finding a penis drawn on your face? Finding out it was traced.",
+      "If a guy remembers the color of your eyes after the first date, chances are... you have small boobs.",
+      "What do you call a cheap circumcision? A rip-off.",
+      "Why did the sperm cross the road? Because I put on the wrong sock this morning.",
+      "What's the best part about gardening? Getting down and dirty with your hoes.",
+      "How is a girlfriend like a laxative? They both irritate the shit out of you.",
+      "What do you call two jalapeños having sex? Fucking hot!",
+      "Why don't eggs tell jokes? They'd crack each other up... but they'd still get laid.",
+      "What's the difference between kinky and perverted? Kinky is when you use a feather; perverted is when you use the whole chicken.",
+      "Why did the scarecrow win an award? He was outstanding in his field... but his wife said he was outstanding in bed too.",
+      "What did one boob say to the other? 'If we don't get support soon, people are gonna think we're nuts!'",
+      "Why was the guitar teacher arrested? For fingering a minor.",
+      "What's long, hard, and full of seamen? A submarine.",
+      "How do you make your wife scream during sex? Call her and tell her about it.",
+      "What's the difference between your job and a dead prostitute? Your job still sucks.",
+      "Why did the snowman suddenly smile? He could see the snowblower coming.",
+      "What do you call a herd of masturbating cows? Beef strokin' off.",
+      "Why did the banana go to the doctor? It wasn't peeling well... after a wild night.",
+      "What's the speed limit of sex? 68 – because at 69 you have to turn around.",
+      "Why don't oysters donate to charity? They're shellfish in bed too."
+    ];
+
+    function createEmoji() {
+      const emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.textContent = ['😈','🔥','💦','🍆','😏','🤤'][Math.floor(Math.random()*6)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (Math.random() * 4 + 3) + 's';
+      document.getElementById('rain').appendChild(emoji);
+      setTimeout(() => emoji.remove(), 8000);
+    }
+
+    function tellJoke() {
+      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      document.getElementById('joke').textContent = randomJoke;
+
+      // Spicy emoji rain
+      const interval = setInterval(createEmoji, 120);
+      setTimeout(() => clearInterval(interval), 3000);
+    }
+
+    // Start with one free dirty hit
+    tellJoke();
+  </script>
+
+</body>
+</html>
